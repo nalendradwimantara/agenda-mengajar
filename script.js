@@ -1,6 +1,6 @@
 const SUPABASE_URL="https://gstvmjeipsyertvowxur.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY="sb_publishable_fkbAKobSrq0NfAOg4iCsSw_O_Kb3atd";
-const{createClient}=window.supabase;const supabaseClient=createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+const{createClient}=window.supabase;const supabaseClient=createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,storageKey:"agenda-mengajar-auth"}});
 const dayNames=["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
 const monthNames=["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
 const dayOrder=["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
