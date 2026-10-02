@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda Mengajar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">TEACHER DASHBOARD</p>
+      <h1>Agenda Mengajar</h1>
+      <p id="todayLabel">Memuat tanggal...</p>
+    </div>
+    <div class="clock" id="clock">--:--:--</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Selamat datang</p>
+        <h2>Siap mengajar hari ini?</h2>
+        <p>Kelola jadwal, piket, dan pekerjaan Anda dari satu halaman.</p>
+      </div>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span>Jadwal hari ini</span>
+        <strong id="scheduleCount">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Tugas aktif</span>
+        <strong id="activeTaskCount">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Tugas selesai</span>
+        <strong id="doneTaskCount">0</strong>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="card-title">
+          <div>
+            <p class="eyebrow">HARI INI</p>
+            <h3>Jadwal Mengajar</h3>
+          </div>
+        </div>
+        <div id="scheduleList" class="list">Memuat...</div>
+      </article>
+
+      <article class="card">
+        <div class="card-title">
+          <div>
+            <p class="eyebrow">TUGAS</p>
+            <h3>Pekerjaan Saya</h3>
+          </div>
+        </div>
+        <div id="taskList" class="list">Memuat...</div>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="card-title">
+        <div>
+          <p class="eyebrow">PETUGAS</p>
+          <h3>Jadwal Piket</h3>
+        </div>
+      </div>
+      <div id="dutyList" class="list">Memuat...</div>
+    </section>
+
+    <section class="card">
+      <div class="card-title">
+        <div>
+          <p class="eyebrow">SELESAI</p>
+          <h3>Pekerjaan Selesai</h3>
+        </div>
+      </div>
+      <div id="completedList" class="list">Memuat...</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Agenda Mengajar • Dibuat untuk membantu pekerjaan guru</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
