@@ -52,11 +52,12 @@
       </article>
 
       <article class="card">
-        <div class="card-title">
+        <div class="card-title task-header">
           <div>
             <p class="eyebrow">TUGAS</p>
             <h3>Pekerjaan Saya</h3>
           </div>
+          <button id="addTaskButton" class="button primary" type="button">+ Tambah tugas</button>
         </div>
         <div id="taskList" class="list">Memuat...</div>
       </article>
@@ -82,6 +83,46 @@
       <div id="completedList" class="list">Memuat...</div>
     </section>
   </main>
+
+  <div id="taskModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">KELOLA TUGAS</p>
+          <h3 id="modalTitle">Tambah tugas</h3>
+        </div>
+        <button id="closeModalButton" class="icon-button" type="button" aria-label="Tutup">×</button>
+      </div>
+
+      <form id="taskForm">
+        <input id="taskId" type="hidden">
+
+        <label for="taskTitle">Nama tugas</label>
+        <input id="taskTitle" type="text" placeholder="Contoh: Menyiapkan materi" required maxlength="120">
+
+        <div class="form-grid">
+          <div>
+            <label for="taskDeadline">Deadline</label>
+            <input id="taskDeadline" type="date">
+          </div>
+          <div>
+            <label for="taskPriority">Prioritas</label>
+            <select id="taskPriority">
+              <option value="Tinggi">Tinggi</option>
+              <option value="Sedang" selected>Sedang</option>
+              <option value="Rendah">Rendah</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button id="cancelTaskButton" class="button secondary" type="button">Batal</button>
+          <button class="button primary" type="submit">Simpan tugas</button>
+        </div>
+      </form>
+    </section>
+  </div>
 
   <footer>
     <p>Agenda Mengajar • Dibuat untuk membantu pekerjaan guru</p>
