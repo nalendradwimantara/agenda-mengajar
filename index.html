@@ -24,8 +24,8 @@
     <section id="authCard" class="card auth-card">
       <div>
         <p class="eyebrow">AKSES PRIBADI</p>
-        <h3>Masuk untuk menyimpan tugas secara online</h3>
-        <p class="auth-help">Tugas yang Anda buat akan tersimpan di akun Anda dan dapat dibuka dari perangkat lain.</p>
+        <h3>Masuk untuk menyimpan data secara online</h3>
+        <p class="auth-help">Jadwal dan tugas akan tersimpan di akun Anda dan dapat dibuka dari perangkat lain.</p>
       </div>
       <form id="authForm" class="auth-form">
         <input id="authEmail" type="email" placeholder="Email" autocomplete="email" required>
@@ -42,42 +42,43 @@
       <div>
         <p class="eyebrow">Selamat datang</p>
         <h2>Siap mengajar hari ini?</h2>
-        <p>Kelola jadwal, piket, dan pekerjaan Anda dari satu halaman.</p>
+        <p>Kelola jadwal, tugas, dan piket Anda dari satu halaman.</p>
       </div>
     </section>
 
     <section class="stats">
-      <article class="stat-card">
-        <span>Jadwal hari ini</span>
-        <strong id="scheduleCount">0</strong>
-      </article>
-      <article class="stat-card">
-        <span>Tugas aktif</span>
-        <strong id="activeTaskCount">0</strong>
-      </article>
-      <article class="stat-card">
-        <span>Tugas selesai</span>
-        <strong id="doneTaskCount">0</strong>
-      </article>
+      <article class="stat-card"><span>Jadwal hari ini</span><strong id="scheduleCount">0</strong></article>
+      <article class="stat-card"><span>Tugas aktif</span><strong id="activeTaskCount">0</strong></article>
+      <article class="stat-card"><span>Tugas selesai</span><strong id="doneTaskCount">0</strong></article>
+    </section>
+
+    <section class="card">
+      <div class="card-title">
+        <div>
+          <p class="eyebrow">KALENDER MINGGUAN</p>
+          <h3>Jadwal Mengajar</h3>
+        </div>
+        <button id="addScheduleButton" class="button primary" type="button" disabled>+ Tambah jadwal</button>
+      </div>
+      <div class="week-toolbar">
+        <button id="prevWeekButton" class="small-button" type="button">‹ Minggu sebelumnya</button>
+        <strong id="weekLabel">Minggu ini</strong>
+        <button id="nextWeekButton" class="small-button" type="button">Minggu berikutnya ›</button>
+      </div>
+      <div id="weeklyCalendar" class="weekly-calendar">Memuat jadwal...</div>
     </section>
 
     <section class="grid">
       <article class="card">
         <div class="card-title">
-          <div>
-            <p class="eyebrow">HARI INI</p>
-            <h3>Jadwal Mengajar</h3>
-          </div>
+          <div><p class="eyebrow">HARI INI</p><h3>Jadwal Hari Ini</h3></div>
         </div>
         <div id="scheduleList" class="list">Memuat...</div>
       </article>
 
       <article class="card">
         <div class="card-title task-header">
-          <div>
-            <p class="eyebrow">TUGAS</p>
-            <h3>Pekerjaan Saya</h3>
-          </div>
+          <div><p class="eyebrow">TUGAS</p><h3>Pekerjaan Saya</h3></div>
           <button id="addTaskButton" class="button primary" type="button" disabled>+ Tambah tugas</button>
         </div>
         <div id="taskList" class="list">Masuk untuk memuat tugas online.</div>
@@ -85,22 +86,12 @@
     </section>
 
     <section class="card">
-      <div class="card-title">
-        <div>
-          <p class="eyebrow">PETUGAS</p>
-          <h3>Jadwal Piket</h3>
-        </div>
-      </div>
+      <div class="card-title"><div><p class="eyebrow">PETUGAS</p><h3>Jadwal Piket</h3></div></div>
       <div id="dutyList" class="list">Memuat...</div>
     </section>
 
     <section class="card">
-      <div class="card-title">
-        <div>
-          <p class="eyebrow">SELESAI</p>
-          <h3>Pekerjaan Selesai</h3>
-        </div>
-      </div>
+      <div class="card-title"><div><p class="eyebrow">SELESAI</p><h3>Pekerjaan Selesai</h3></div></div>
       <div id="completedList" class="list">Masuk untuk memuat tugas online.</div>
     </section>
   </main>
@@ -108,46 +99,44 @@
   <div id="taskModal" class="modal hidden" aria-hidden="true">
     <div class="modal-backdrop" data-close-modal></div>
     <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="modal-header">
-        <div>
-          <p class="eyebrow">KELOLA TUGAS</p>
-          <h3 id="modalTitle">Tambah tugas</h3>
-        </div>
-        <button id="closeModalButton" class="icon-button" type="button" aria-label="Tutup">×</button>
-      </div>
-
+      <div class="modal-header"><div><p class="eyebrow">KELOLA TUGAS</p><h3 id="modalTitle">Tambah tugas</h3></div><button id="closeModalButton" class="icon-button" type="button">×</button></div>
       <form id="taskForm">
         <input id="taskId" type="hidden">
-
         <label for="taskTitle">Nama tugas</label>
         <input id="taskTitle" type="text" placeholder="Contoh: Menyiapkan materi" required maxlength="120">
-
         <div class="form-grid">
-          <div>
-            <label for="taskDeadline">Deadline</label>
-            <input id="taskDeadline" type="date">
-          </div>
-          <div>
-            <label for="taskPriority">Prioritas</label>
-            <select id="taskPriority">
-              <option value="Tinggi">Tinggi</option>
-              <option value="Sedang" selected>Sedang</option>
-              <option value="Rendah">Rendah</option>
-            </select>
-          </div>
+          <div><label for="taskDeadline">Deadline</label><input id="taskDeadline" type="date"></div>
+          <div><label for="taskPriority">Prioritas</label><select id="taskPriority"><option value="Tinggi">Tinggi</option><option value="Sedang" selected>Sedang</option><option value="Rendah">Rendah</option></select></div>
         </div>
-
-        <div class="form-actions">
-          <button id="cancelTaskButton" class="button secondary" type="button">Batal</button>
-          <button class="button primary" type="submit">Simpan tugas</button>
-        </div>
+        <div class="form-actions"><button id="cancelTaskButton" class="button secondary" type="button">Batal</button><button class="button primary" type="submit">Simpan tugas</button></div>
       </form>
     </section>
   </div>
 
-  <footer>
-    <p>Agenda Mengajar • Dibuat untuk membantu pekerjaan guru</p>
-  </footer>
+  <div id="scheduleModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" data-close-schedule-modal></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="scheduleModalTitle">
+      <div class="modal-header"><div><p class="eyebrow">KELOLA JADWAL</p><h3 id="scheduleModalTitle">Tambah jadwal</h3></div><button id="closeScheduleModalButton" class="icon-button" type="button">×</button></div>
+      <form id="scheduleForm">
+        <input id="scheduleId" type="hidden">
+        <div class="form-grid">
+          <div><label for="scheduleDay">Hari</label><select id="scheduleDay"><option>Senin</option><option>Selasa</option><option>Rabu</option><option>Kamis</option><option>Jumat</option><option>Sabtu</option><option>Minggu</option></select></div>
+          <div><label for="scheduleClass">Kelas</label><input id="scheduleClass" type="text" placeholder="Contoh: Kelas 8A" required maxlength="80"></div>
+        </div>
+        <div class="form-grid">
+          <div><label for="scheduleStart">Jam mulai</label><input id="scheduleStart" type="time" required></div>
+          <div><label for="scheduleEnd">Jam selesai</label><input id="scheduleEnd" type="time" required></div>
+        </div>
+        <label for="scheduleSubject">Mata pelajaran</label>
+        <input id="scheduleSubject" type="text" placeholder="Contoh: Matematika" required maxlength="100">
+        <label for="scheduleRoom">Ruang</label>
+        <input id="scheduleRoom" type="text" placeholder="Contoh: Ruang 1 / Lab Komputer" maxlength="100">
+        <div class="form-actions"><button id="cancelScheduleButton" class="button secondary" type="button">Batal</button><button class="button primary" type="submit">Simpan jadwal</button></div>
+      </form>
+    </section>
+  </div>
+
+  <footer><p>Agenda Mengajar • Dibuat untuk membantu pekerjaan guru</p></footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js"></script>
