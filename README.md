@@ -2,21 +2,27 @@
 
 Dashboard pribadi untuk membantu mengelola agenda guru.
 
-## Isi awal
+## Fitur
 - Jadwal mengajar hari ini
 - Jadwal piket
-- Pekerjaan aktif
-- Pekerjaan yang sudah selesai
-- Jam dan tanggal otomatis
+- Login akun
+- Tugas tersimpan online di Supabase
+- Tambah, edit, hapus, dan tandai tugas selesai
+- Deadline dan prioritas tugas
+- Data tugas dipisahkan berdasarkan akun menggunakan Row Level Security (RLS)
 
 ## Struktur
 - `index.html` — halaman dashboard
 - `style.css` — tampilan
-- `script.js` — logika dashboard
+- `script.js` — logika dashboard dan Supabase
 - `data/jadwal.json` — data jadwal mengajar
 - `data/piket.json` — data piket
-- `data/tugas.json` — data pekerjaan
+- `data/tugas.json` — data contoh awal (tidak lagi digunakan untuk penyimpanan tugas online)
 
-Data contoh sengaja digunakan pada tahap awal. Ganti dengan data Anda sendiri setelah dashboard berhasil berjalan.
+> Catatan: repository ini bersifat public. Jangan memasukkan data siswa atau informasi pribadi/sensitif ke file repository.
 
-> Catatan: repository ini saat ini bersifat public. Jangan memasukkan data siswa atau informasi pribadi/sensitif.
+## Penyimpanan online
+
+Dashboard menggunakan Supabase Auth dan tabel `public.tugas`. Pastikan Row Level Security (RLS) dan policy tabel `tugas` sudah dibuat sesuai konfigurasi project.
+
+Kunci yang digunakan di browser adalah publishable key. Jangan pernah memasukkan `service_role` key atau password database ke repository.
