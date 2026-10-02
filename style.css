@@ -32,3 +32,7 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;padding:0 20px 30px
 .completed-card{margin-top:0}
 @media(max-width:760px){.topbar{position:relative;padding:20px 16px}.container{margin-bottom:32px}.hero{padding:26px 24px;min-height:145px}.stats{gap:10px}.stat-card{padding:16px}.stat-card strong{font-size:1.5rem}.card{padding:18px}.weekly-calendar{margin-right:-4px}.day-column{min-height:205px}}
 @media(max-width:480px){.hero{padding:22px 20px}.hero h2{font-size:1.45rem}.hero p:last-child{font-size:.9rem}.stats{grid-template-columns:1fr 1fr}.stat-card:last-child{grid-column:1/-1}.card{padding:16px}.card-title{gap:10px}.card-title .button{width:100%}.week-toolbar .small-button{min-width:0}.auth-card{padding:18px}}
+
+/* Header layout update */
+.header-side{display:flex;flex-direction:column;align-items:flex-end;gap:8px;margin-left:auto;min-width:260px}.header-account{margin-left:0}.clock{font-size:2rem;line-height:1;font-weight:800;letter-spacing:.04em;color:var(--text);font-variant-numeric:tabular-nums}.user-email{max-width:280px}.header-side .small-button{padding:7px 11px}
+@media(max-width:760px){.header-side{width:100%;min-width:0;align-items:flex-start;margin-left:0}.clock{font-size:1.75rem}.header-account{width:100%;justify-content:flex-start}.user-email{max-width:calc(100% - 75px)}}
