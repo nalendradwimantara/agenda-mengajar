@@ -13,11 +13,13 @@
       <h1>Agenda Mengajar</h1>
       <p id="todayLabel">Memuat tanggal...</p>
     </div>
-    <div class="header-account">
-      <span id="userEmail" class="user-email">Belum masuk</span>
-      <button id="logoutButton" class="small-button" type="button" hidden>Keluar</button>
+    <div class="header-side">
+      <div class="header-account">
+        <span id="userEmail" class="user-email">Belum masuk</span>
+        <button id="logoutButton" class="small-button" type="button" hidden>Keluar</button>
+      </div>
+      <div class="clock" id="clock">--:--:--</div>
     </div>
-    <div class="clock" id="clock">--:--:--</div>
   </header>
 
   <main class="container">
@@ -46,11 +48,24 @@
       </div>
     </section>
 
-    <section class="stats">
-      <article class="stat-card"><span>Jadwal hari ini</span><strong id="scheduleCount">0</strong></article>
-      <article class="stat-card"><span>Tugas aktif</span><strong id="activeTaskCount">0</strong></article>
-      <article class="stat-card"><span>Tugas selesai</span><strong id="doneTaskCount">0</strong></article>
-    </section>
+
+
+    <section class="grid">
+      <article class="card">
+        <div class="card-title">
+          <div><p class="eyebrow">HARI INI</p><h3>Jadwal Hari Ini</h3></div>
+        </div>
+        <div id="scheduleList" class="list">Memuat...</div>
+      </article>
+
+      <article class="card">
+        <div class="card-title task-header">
+          <div><p class="eyebrow">TUGAS</p><h3>Pekerjaan Saya</h3></div>
+          <button id="addTaskButton" class="button primary" type="button" disabled>+ Tambah tugas</button>
+        </div>
+        <div id="taskList" class="list">Masuk untuk memuat tugas online.</div>
+      </article>
+    </section
 
     <section class="card">
       <div class="card-title">
@@ -68,22 +83,7 @@
       <div id="weeklyCalendar" class="weekly-calendar">Memuat jadwal...</div>
     </section>
 
-    <section class="grid">
-      <article class="card">
-        <div class="card-title">
-          <div><p class="eyebrow">HARI INI</p><h3>Jadwal Hari Ini</h3></div>
-        </div>
-        <div id="scheduleList" class="list">Memuat...</div>
-      </article>
-
-      <article class="card">
-        <div class="card-title task-header">
-          <div><p class="eyebrow">TUGAS</p><h3>Pekerjaan Saya</h3></div>
-          <button id="addTaskButton" class="button primary" type="button" disabled>+ Tambah tugas</button>
-        </div>
-        <div id="taskList" class="list">Masuk untuk memuat tugas online.</div>
-      </article>
-    </section>
+>
 
     <section class="card completed-card">
       <div class="card-title"><div><p class="eyebrow">SELESAI</p><h3>Pekerjaan Selesai</h3></div></div>
