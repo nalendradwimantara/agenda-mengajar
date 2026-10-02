@@ -13,10 +13,31 @@
       <h1>Agenda Mengajar</h1>
       <p id="todayLabel">Memuat tanggal...</p>
     </div>
+    <div class="header-account">
+      <span id="userEmail" class="user-email">Belum masuk</span>
+      <button id="logoutButton" class="small-button" type="button" hidden>Keluar</button>
+    </div>
     <div class="clock" id="clock">--:--:--</div>
   </header>
 
   <main class="container">
+    <section id="authCard" class="card auth-card">
+      <div>
+        <p class="eyebrow">AKSES PRIBADI</p>
+        <h3>Masuk untuk menyimpan tugas secara online</h3>
+        <p class="auth-help">Tugas yang Anda buat akan tersimpan di akun Anda dan dapat dibuka dari perangkat lain.</p>
+      </div>
+      <form id="authForm" class="auth-form">
+        <input id="authEmail" type="email" placeholder="Email" autocomplete="email" required>
+        <input id="authPassword" type="password" placeholder="Password" autocomplete="current-password" minlength="6" required>
+        <div class="auth-actions">
+          <button class="button primary" type="submit" data-auth-action="login">Masuk</button>
+          <button class="button secondary" type="button" data-auth-action="signup">Daftar</button>
+        </div>
+        <p id="authMessage" class="auth-message" aria-live="polite"></p>
+      </form>
+    </section>
+
     <section class="hero">
       <div>
         <p class="eyebrow">Selamat datang</p>
@@ -57,9 +78,9 @@
             <p class="eyebrow">TUGAS</p>
             <h3>Pekerjaan Saya</h3>
           </div>
-          <button id="addTaskButton" class="button primary" type="button">+ Tambah tugas</button>
+          <button id="addTaskButton" class="button primary" type="button" disabled>+ Tambah tugas</button>
         </div>
-        <div id="taskList" class="list">Memuat...</div>
+        <div id="taskList" class="list">Masuk untuk memuat tugas online.</div>
       </article>
     </section>
 
@@ -80,7 +101,7 @@
           <h3>Pekerjaan Selesai</h3>
         </div>
       </div>
-      <div id="completedList" class="list">Memuat...</div>
+      <div id="completedList" class="list">Masuk untuk memuat tugas online.</div>
     </section>
   </main>
 
@@ -128,6 +149,7 @@
     <p>Agenda Mengajar • Dibuat untuk membantu pekerjaan guru</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js"></script>
 </body>
 </html>
