@@ -1,0 +1,5 @@
+[
+  {"hari":"Senin","kegiatan":"Piket pagi","waktu":"06:30–07:00","lokasi":"Gerbang"},
+  {"hari":"Rabu","kegiatan":"Piket istirahat","waktu":"09:30–10:00","lokasi":"Koridor"},
+  {"hari":"Jumat","kegiatan":"Piket pulang","waktu":"12:00–12:30","lokasi":"Gerbang"}
+]
