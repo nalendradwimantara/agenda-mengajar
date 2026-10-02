@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agenda Mengajar</title>
-  <link rel="stylesheet" href="style.css?v=20261002-2">
+  <link rel="stylesheet" href="style.css?v=20261002-3">
 </head>
 <body>
   <header class="topbar">
@@ -65,7 +65,7 @@
         </div>
         <div id="taskList" class="list">Masuk untuk memuat tugas online.</div>
       </article>
-    </section
+    </section>
 
     <section class="card">
       <div class="card-title">
@@ -83,6 +83,44 @@
       <div id="weeklyCalendar" class="weekly-calendar">Memuat jadwal...</div>
     </section>
 
+
+    <section class="card activity-calendar-card">
+      <div class="card-title">
+        <div>
+          <p class="eyebrow">AGENDA SEKOLAH</p>
+          <h3>Kalender Kegiatan</h3>
+        </div>
+        <button id="addActivityButton" class="button primary" type="button" disabled>+ Tambah kegiatan</button>
+      </div>
+      <div class="activity-layout">
+        <div class="activity-calendar-wrap">
+          <div class="activity-calendar-toolbar">
+            <button id="prevActivityMonthButton" class="small-button" type="button">‹</button>
+            <strong id="activityMonthLabel">Memuat...</strong>
+            <button id="nextActivityMonthButton" class="small-button" type="button">›</button>
+          </div>
+          <div class="activity-weekdays">
+            <span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span><span>Min</span>
+          </div>
+          <div id="activityCalendar" class="activity-calendar">Memuat kalender...</div>
+          <div class="activity-legend">
+            <span><i class="legend-dot activity-dot"></i>Kegiatan</span>
+            <span><i class="legend-dot holiday-dot"></i>Libur nasional</span>
+            <span><i class="legend-dot special-dot"></i>Hari spesial</span>
+          </div>
+        </div>
+        <aside class="activity-agenda">
+          <div class="agenda-block">
+            <p class="eyebrow">HARI INI</p>
+            <div id="todayActivities" class="activity-list">Memuat...</div>
+          </div>
+          <div class="agenda-block">
+            <p class="eyebrow">SELANJUTNYA</p>
+            <div id="upcomingActivities" class="activity-list">Memuat...</div>
+          </div>
+        </aside>
+      </div>
+    </section>
 
     <section class="card completed-card">
       <div class="card-title"><div><p class="eyebrow">SELESAI</p><h3>Pekerjaan Selesai</h3></div></div>
@@ -130,9 +168,34 @@
     </section>
   </div>
 
+  <div id="activityModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" data-close-activity-modal></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="activityModalTitle">
+      <div class="modal-header"><div><p class="eyebrow">KELOLA KEGIATAN</p><h3 id="activityModalTitle">Tambah kegiatan</h3></div><button id="closeActivityModalButton" class="icon-button" type="button">×</button></div>
+      <form id="activityForm">
+        <input id="activityId" type="hidden">
+        <label for="activityTitle">Nama kegiatan</label>
+        <input id="activityTitle" type="text" placeholder="Contoh: Rapat guru" required maxlength="120">
+        <div class="form-grid">
+          <div><label for="activityDate">Tanggal</label><input id="activityDate" type="date" required></div>
+          <div><label for="activityCategory">Kategori</label><select id="activityCategory"><option>Kegiatan sekolah</option><option>Rapat</option><option>Upacara</option><option>Piket</option><option>Pelatihan</option><option>Lainnya</option></select></div>
+        </div>
+        <div class="form-grid">
+          <div><label for="activityStart">Jam mulai</label><input id="activityStart" type="time"></div>
+          <div><label for="activityEnd">Jam selesai</label><input id="activityEnd" type="time"></div>
+        </div>
+        <label for="activityLocation">Lokasi</label>
+        <input id="activityLocation" type="text" placeholder="Contoh: Aula sekolah" maxlength="100">
+        <label for="activityNotes">Keterangan</label>
+        <textarea id="activityNotes" rows="3" placeholder="Keterangan tambahan..." maxlength="500"></textarea>
+        <div class="form-actions"><button id="cancelActivityButton" class="button secondary" type="button">Batal</button><button class="button primary" type="submit">Simpan kegiatan</button></div>
+      </form>
+    </section>
+  </div>
+
   <footer><p>Agenda Mengajar • Dibuat untuk membantu pekerjaan guru</p></footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="script.js?v=20261002-2"></script>
+  <script src="script.js?v=20261002-3"></script>
 </body>
 </html>
