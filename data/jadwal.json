@@ -1,0 +1,8 @@
+[
+  {"hari":"Senin","jam":"07:00–08:30","mataPelajaran":"Matematika","kelas":"Kelas 8A","ruang":"Ruang 1"},
+  {"hari":"Senin","jam":"09:00–10:30","mataPelajaran":"Informatika","kelas":"Kelas 7B","ruang":"Lab Komputer"},
+  {"hari":"Selasa","jam":"07:00–08:30","mataPelajaran":"Matematika","kelas":"Kelas 8B","ruang":"Ruang 2"},
+  {"hari":"Rabu","jam":"08:00–09:30","mataPelajaran":"Informatika","kelas":"Kelas 7A","ruang":"Lab Komputer"},
+  {"hari":"Kamis","jam":"07:00–08:30","mataPelajaran":"Matematika","kelas":"Kelas 8A","ruang":"Ruang 1"},
+  {"hari":"Jumat","jam":"07:00–08:00","mataPelajaran":"Wali Kelas","kelas":"Kelas 8A","ruang":"Ruang 1"}
+]
