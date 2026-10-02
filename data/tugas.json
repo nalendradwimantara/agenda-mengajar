@@ -1,0 +1,5 @@
+[
+  {"judul":"Menyiapkan materi pembelajaran","deadline":"Besok","prioritas":"Tinggi","selesai":false},
+  {"judul":"Memeriksa tugas siswa","deadline":"Jumat","prioritas":"Sedang","selesai":false},
+  {"judul":"Membuat rekap nilai","deadline":"30 Oktober","prioritas":"Sedang","selesai":true,"tanggalSelesai":"1 Oktober"}
+]
